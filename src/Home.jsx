@@ -7,7 +7,7 @@ let Home = (props) => {
     let [posts, setPosts] = useState([]);
     
     if(props.user){ 
-        var Uid=props.user.uid;
+      const Uid=props.user.uid;
 
         let f = async () => {
             await firestore.collection(`${Uid}`).onSnapshot((querySnapshot) => {
@@ -51,7 +51,7 @@ let Home = (props) => {
           if (e.code === "Enter") {
             //  jobhi likha hua hai wo muje firebase me dalna hai
             let post = e.currentTarget.value;
-            firestore.collection(`${Uid}`).add({ Body: post });
+            firestore.collection(`${props.user.uid}`).add({ Body: post });
             e.currentTarget.value = "";
           }
         }}
