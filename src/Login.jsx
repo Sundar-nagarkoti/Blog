@@ -8,8 +8,7 @@ let Login = (props) => {
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
-      //if login-> user info
-      //if logout-> user = null
+   
       console.log(user);
       if (user) {
         let {uid} = user;

@@ -36,9 +36,6 @@ let Home = (props) => {
     <div>
       {props.user ? (
         <>
-          {/* <h1>{props.user.displayName}</h1>
-          <p>Email: {props.user.email}</p>
-          <p>Uid:{props.user.uid}</p> */}
       <ul>
         {posts.map((el) => (
           <li key={el.id}>{el.data.Body}</li>
@@ -49,7 +46,7 @@ let Home = (props) => {
         type="text"
         onKeyDown={(e) => {
           if (e.code === "Enter") {
-            //  jobhi likha hua hai wo muje firebase me dalna hai
+           
             let post = e.currentTarget.value;
             firestore.collection(`${props.user.uid}`).add({ Body: post });
             e.currentTarget.value = "";
